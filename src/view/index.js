@@ -5,6 +5,7 @@ class Home extends React.Component{
         num:1
     }
     render(){
+        console.log(this.props,'client')
         return(
             <div>
                 {this.state.num}

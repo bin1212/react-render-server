@@ -1,6 +1,5 @@
 const path = require('path')
 const nodeExternals = require('webpack-node-externals')
-console.log(111)
 module.exports = {
     target: 'node',
     entry: './src/server/index.js',
@@ -10,10 +9,13 @@ module.exports = {
         filename: 'server.js'
     },
     externals: [nodeExternals()],
+    resolve: {
+        extensions: [".js", ".jsx", ".json"]
+    },
     module: {
         rules: [
             {
-                test: /\.js$/,
+                test: /\.(js|mjs|jsx|ts|tsx)$/,
                 loader: 'babel-loader',
                 exclude:/node_modules/,
                 options:{

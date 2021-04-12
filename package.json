@@ -19,6 +19,9 @@
     "bfj": "^7.0.2",
     "camelcase": "^6.1.0",
     "case-sensitive-paths-webpack-plugin": "2.3.0",
+    "connect-history-api-fallback": "^1.6.0",
+    "connected-react-router": "^6.9.1",
+    "cookie-parser": "^1.4.5",
     "css-loader": "4.3.0",
     "dotenv": "8.2.0",
     "dotenv-expand": "5.1.0",
@@ -35,6 +38,7 @@
     "express": "^4.17.1",
     "file-loader": "6.1.1",
     "fs-extra": "^9.0.1",
+    "history": "4.10.1",
     "html-webpack-plugin": "4.5.0",
     "identity-obj-proxy": "3.0.0",
     "jest": "26.6.0",
@@ -54,7 +58,12 @@
     "react-app-polyfill": "^2.0.0",
     "react-dev-utils": "^11.0.3",
     "react-dom": "^17.0.2",
+    "react-redux": "^7.2.3",
     "react-refresh": "^0.8.3",
+    "react-router": "^5.2.0",
+    "react-router-config": "^5.1.1",
+    "react-router-dom": "^5.2.0",
+    "redux": "^4.0.5",
     "resolve": "1.18.1",
     "resolve-url-loader": "^3.1.2",
     "sass-loader": "^10.0.5",
@@ -70,12 +79,14 @@
     "workbox-webpack-plugin": "5.1.4"
   },
   "scripts": {
-    "dev":"npm-run-all --parallel server:**",
+    "dev": "npm-run-all --parallel server:**",
     "start": "node scripts/start.js",
     "build": "node scripts/build.js",
     "test": "node scripts/test.js",
-    "server:start": "node serverBuild/server.js",
-    "server:build": "cross-env NODE_ENV=development webpack --config config/server.config.js"
+    "server:build:client": "node scripts/build.js",
+    "server:build:server": "cross-env NODE_ENV=development webpack --config config/server.config.js  --watch",
+    "server:start": "nodemon serverBuild/server.js",
+    "server1:build": "cross-env NODE_ENV=development webpack --config config/server.config.js"
   },
   "eslintConfig": {
     "extends": [
@@ -158,5 +169,6 @@
     "cross-env": "^7.0.3",
     "webpack-cli": "^4.6.0",
     "webpack-node-externals": "^2.5.2"
-  }
+  },
+  "homepage": "/"
 }
