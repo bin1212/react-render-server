@@ -1,7 +1,7 @@
 import {combineReducers} from 'redux'
 import {connectRouter} from 'connected-react-router'
 import home from './home'
-import history from '../../untils/history'
+import history from '../../utils/history'
 
 const reducers = combineReducers({
   home,

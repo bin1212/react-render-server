@@ -20,7 +20,8 @@ const RouterConfig = [
     path: '/list',
     component: List,
     render: auth ? null : () => <div>404</div>,
-    key:'/list'
+    key:'/list',
+    loadData: List.loadData
   },
 ];
 

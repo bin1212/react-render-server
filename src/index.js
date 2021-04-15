@@ -5,11 +5,14 @@ import {Switch } from 'react-router-dom'
 import {ConnectedRouter} from 'connected-react-router'
 import RouterConfig from "./router";
 import {renderRoutes} from 'react-router-config';
-import history from './untils/history'
-import {getClientStore} from './store'
+import history from './utils/history'
+import {getClientStore,sagaMiddleware} from './store'
+import rootSaga from './store/sagas'
 
+let store = getClientStore()
+sagaMiddleware.run(rootSaga,'/aaaa')
 ReactDOM.hydrate(
-  <Provider store={getClientStore()}>
+  <Provider store={store}>
     <ConnectedRouter history={history}>
       <Switch>
         {renderRoutes(RouterConfig)}

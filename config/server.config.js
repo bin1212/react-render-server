@@ -24,6 +24,18 @@ module.exports = {
                         "@babel/preset-react"
                     ]
                 }
+            },
+            {
+                test:/\.css$/,
+                use:[
+                    'isomorphic-style-loader',
+                    {
+                        loader:'css-loader',
+                        options:{
+                            modules:true
+                        }
+                    }
+                ]
             }
         ]
     }

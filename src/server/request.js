@@ -5,9 +5,15 @@ import axios from 'axios';
 // 让 node 服务器帮我们访问 API 服务器的 4000 端口请求数据
 
 //创建一个 axios 的实例, 配置baseURL的基准路径
-export default (req) => axios.create({
-    baseURL: 'http://localhost:4000',
-    headers: {
-        cookie: req.get('cookie') || ''
-    }
-});
+// export default (req) => axios.create({
+//     baseURL: 'http://localhost:4444',
+//     headers: {
+//         cookie: req.get('cookie') || ''
+//     }
+// });
+const instance = axios.create({
+    baseURL:'http://localhost:4444/',
+    timeout: 1000,
+})
+export default instance
+
