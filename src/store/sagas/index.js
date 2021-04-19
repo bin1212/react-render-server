@@ -1,12 +1,19 @@
-import { all } from 'redux-saga/effects'
+import { all,select,takeEvery } from 'redux-saga/effects'
 import {watchSaveHomeList} from './home'
+import {watchFirstThreeTodosCreation} from './counter'
 
 export function* helloSaga(){
-  console.log('hello')
+  yield takeEvery('*', function* logger(action) {
+    const state = yield select()
+
+    // console.log('action', action)
+    // console.log('state after', state)
+  })
 }
 export default function* rootSaga(){
   yield all([
     helloSaga(),
-    watchSaveHomeList()
+    watchSaveHomeList(),
+    watchFirstThreeTodosCreation()
   ])
 }

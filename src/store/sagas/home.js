@@ -4,7 +4,7 @@ import {getHomelist} from '../../api/index'
 
 function* saveMsg(data) {
   const {callBack} = data
-  const response = yield call(getHomelist)
+  const response = yield call(getHomelist,'aaaaaa')
   console.log('request',response.data)
   yield put({type: SET_HOME_LIST, payload:response.data});
   if(callBack){
